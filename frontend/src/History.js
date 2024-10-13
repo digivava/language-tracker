@@ -22,6 +22,13 @@ export default function History({ records }) {
 }
 
 function RecordRow({ record }) {
+  let unitsDisplay;
+  if (record.units === "hours") {
+    unitsDisplay = record.number === 1 ? "hr" : "hrs";
+  } else if (record.units === "minutes") {
+    unitsDisplay = record.number === 1 ? "min" : "mins";
+  }
+
   return (
     <div className="history-table-row">
       <div className="history-table-item">
@@ -34,7 +41,7 @@ function RecordRow({ record }) {
         {record.number}
       </div>
       <div className="history-table-item">
-        {record.units}
+        {unitsDisplay}
       </div>
     </div>
   );

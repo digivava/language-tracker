@@ -24,8 +24,8 @@ export default function Logger({ onSubmit }) {
                   </select>{' '}
                   for <input type="text" name="number"></input>{' '}
                   <select name="units">
-                      <option value="mins">minutes</option>
-                      <option value="hrs">hours</option>
+                      <option value="minutes">minutes</option>
+                      <option value="hours">hours</option>
                   </select>.
               </p>
               <input type="submit" value="Submit" />
