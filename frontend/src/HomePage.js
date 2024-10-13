@@ -56,7 +56,8 @@ async function postData(data) {
     try {
       const response = await fetch(url, requestOptions)
       if (!response.ok) {
-        throw new Error(`Failed to update records. ${response.status}: ${response.json()}`)
+        const errorDetails = await response.json();
+        throw new Error(`Failed to update records. ${response.status}: ${JSON.stringify(errorDetails)}`)
       }
       const json = await response.json();
       console.log(json);
