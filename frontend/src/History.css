@@ -1,0 +1,31 @@
+.tracker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.history-table {
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px;
+    padding: 10px;
+    width: 25%;
+}
+
+.history-table-row {
+    margin: 10px;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.history-table-header-row {
+    background-color: green;
+}
+
+.history-table-item {
+    margin: 2px;
+}
