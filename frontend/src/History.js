@@ -5,6 +5,15 @@ export default function History({ records }) {
     <div className="tracker-container">
       <div className="history-table">
         <div className="history-table-row history-table-header-row">
+          <div className="history-table-item">
+            When
+          </div>
+          <div className="history-table-item">
+            Language
+          </div>
+          <div className="history-table-item">
+            How Long
+          </div>
         </div>
         {records.map(record => <RecordRow key={record.created_at} record={record} />)}
       </div>
