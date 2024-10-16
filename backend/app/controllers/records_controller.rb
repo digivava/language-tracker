@@ -46,6 +46,6 @@ class RecordsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def record_params
-      params.require(:record).permit(:language, :number, :units, :timestamp)
+      params.require(:record).permit(:language, :number, :units, :timestamp, :activity)
     end
 end

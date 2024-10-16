@@ -12,6 +12,9 @@ export default function History({ records }) {
             Language
           </div>
           <div className="history-table-item">
+            Activity
+          </div>
+          <div className="history-table-item">
             How Long
           </div>
         </div>
@@ -36,6 +39,9 @@ function RecordRow({ record }) {
       </div>
       <div className="history-table-item">
         {record.language}
+      </div>
+      <div className="history-table-item">
+        {record.activity}
       </div>
       <div className="history-table-item">
         {record.number}

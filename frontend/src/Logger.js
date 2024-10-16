@@ -5,7 +5,7 @@ export default function Logger({ onSubmit }) {
               e.preventDefault();
               onSubmit(e);
           }}>
-              <p>I studied{' '}
+              <p>I practiced{' '}
                   <select name="language">
                       <option value="Arabic">Arabic</option>
                       <option value="Amharic">Amharic</option>
@@ -26,7 +26,16 @@ export default function Logger({ onSubmit }) {
                   <select name="units">
                       <option value="minutes">minutes</option>
                       <option value="hours">hours</option>
-                  </select>.
+                  </select>{' '}
+                  by{' '}
+                    <select name="activity">
+                      <option value="reading">reading</option>
+                      <option value="writing">writing</option>
+                      <option value="watching">watching</option>
+                      <option value="listening">listening</option>
+                      <option value="speaking">speaking</option>
+                      <option value="studying">studying</option>
+                    </select>.
               </p>
               <input type="submit" value="Submit" />
           </form>

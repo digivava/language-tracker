@@ -28,9 +28,11 @@ export default function HomePage() {
   async function updateRecords(event) {
     const date = new Date();
 
+    
     const record = {
       language: event.target.language.value,
       number: event.target.number.value,
+      activity: event.target.activity.value,
       units: event.target.units.value,
     };
 
