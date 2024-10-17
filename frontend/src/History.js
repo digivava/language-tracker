@@ -38,7 +38,7 @@ function RecordRow({ record }) {
         {record.created_at}
       </div>
       <div className="history-table-item">
-        {record.language}
+        {record.language.name}
       </div>
       <div className="history-table-item">
         {record.activity}

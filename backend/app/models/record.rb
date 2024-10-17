@@ -1,15 +1,13 @@
 class Record < ApplicationRecord
-    validates :language, presence: true, inclusion: { in: %w(Arabic Amharic Cantonese Dutch French German Japanese Korean Mandarin Norwegian Persian Portuguese Russian Spanish Vietnamese) }
+    belongs_to :user
+    belongs_to :language
+
+    validates :language, presence: true
     validates :number, presence: true, numericality: true, comparison: { greater_than: 0 }
     validates :activity, presence: true
     validates :units, presence: true, inclusion: { in: %w(minutes hours) }
 
-    before_validation :capitalize_language, :downcase_units, :downcase_activity
-
-    private
-    def capitalize_language
-        self.language = language.downcase.capitalize if language.present?
-    end
+    before_validation :downcase_units, :downcase_activity
 
     private
     def downcase_units

@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_16_015041) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_17_210257) do
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "records", force: :cascade do |t|
     t.string "language"
     t.float "number"
@@ -18,5 +24,27 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_16_015041) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "activity"
+    t.integer "user_id", null: false
+    t.integer "language_id", null: false
+    t.index ["language_id"], name: "index_records_on_language_id"
+    t.index ["user_id"], name: "index_records_on_user_id"
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users_languages", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "language_id", null: false
+    t.index ["language_id"], name: "index_users_languages_on_language_id"
+    t.index ["user_id"], name: "index_users_languages_on_user_id"
+  end
+
+  add_foreign_key "records", "languages"
+  add_foreign_key "records", "users"
+  add_foreign_key "users_languages", "languages"
+  add_foreign_key "users_languages", "users"
 end

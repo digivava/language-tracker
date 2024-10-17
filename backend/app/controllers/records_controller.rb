@@ -15,7 +15,16 @@ class RecordsController < ApplicationController
 
   # POST /records
   def create
-    @record = Record.new(record_params)
+    language = record_params[:language]
+    language = language.capitalize if language.present?
+    languageFromDB = Language.find_by(name: language)
+
+    # we'll use the real user later, for now it's just the one user from the seed
+    user = User.find_by(username: "test_user")
+
+    @record = Record.new(record_params.except(:language))
+    @record.language = languageFromDB
+    @record.user = user
 
     if @record.save
       render json: @record, status: :created, location: @record
