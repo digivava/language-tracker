@@ -35,7 +35,7 @@ function RecordRow({ record }) {
   let readableTime;
   if (record.created_at) {
     const time = Date.parse(record.created_at);
-    const formatter = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+    const formatter = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
     readableTime = formatter.format(time);
   }
 
