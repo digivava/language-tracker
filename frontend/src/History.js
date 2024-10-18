@@ -32,10 +32,17 @@ function RecordRow({ record }) {
     unitsDisplay = record.number === 1 ? "min" : "mins";
   }
 
+  let readableTime;
+  if (record.created_at) {
+    const time = Date.parse(record.created_at);
+    const formatter = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+    readableTime = formatter.format(time);
+  }
+
   return (
     <div className="history-table-row">
       <div className="history-table-item">
-        {record.created_at}
+        {readableTime}
       </div>
       <div className="history-table-item">
         {record.language.name}
