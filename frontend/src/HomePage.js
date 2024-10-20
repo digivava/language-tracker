@@ -6,10 +6,9 @@ export default function HomePage() {
   const [records, setRecords] = useState([]);
 
   useEffect(() => {
-      getData();
+    getData();
   }, []);
 
-  // const getData = async () => {
   async function getData() {
     const url = 'http://localhost:3001/records';
     try {
@@ -24,10 +23,8 @@ export default function HomePage() {
     }
   };
 
-
   async function updateRecords(event) {
     const date = new Date();
-
     
     const record = {
       language: event.target.language.value,

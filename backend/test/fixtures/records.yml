@@ -1,13 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  language: MyString
-  number: 1
-  units: MyString
-  timestamp: 2024-10-08 08:42:11
-
-two:
-  language: MyString
-  number: 1
-  units: MyString
-  timestamp: 2024-10-08 08:42:11
+  user: test_user
+  language: amharic
+  number: 2
+  units: "hours"
+  activity: "studying"
